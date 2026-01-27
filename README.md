@@ -1,16 +1,16 @@
-# Portfolio - React Portfolio Website
+# Portfolio Website
 
-A modern, responsive portfolio website built with React, featuring glass morphism design, vibrant colors, and smooth animations using Framer Motion.
+A modern, responsive portfolio website built with pure HTML, CSS, and JavaScript featuring glass morphism design and vibrant colors.
 
 ## Features
 
-- ✨ **Glass Morphism Design** - Beautiful translucent cards with backdrop blur effects
-- 🎨 **Vibrant Gradient Background** - Animated gradient with purple, pink, and blue tones
-- 🚀 **React Components** - Modular, reusable component architecture
-- 🎭 **Framer Motion Animations** - Smooth scroll animations and interactive elements
-- 📱 **Fully Responsive** - Works perfectly on mobile, tablet, and desktop
-- 🎯 **Smooth Scrolling** - Elegant navigation between sections
-- 💫 **Interactive Elements** - Hover effects, animations, and transitions
+✨ **Glass Morphism Design** - Beautiful translucent cards with backdrop blur effects  
+🎨 **Vibrant Gradient Background** - Animated gradient with purple, pink, and blue tones  
+🚀 **Pure HTML/CSS/JS** - No frameworks, just vanilla JavaScript  
+🎭 **Smooth Animations** - Scroll-triggered animations and interactive elements  
+📱 **Fully Responsive** - Works perfectly on mobile, tablet, and desktop  
+🎯 **Smooth Scrolling** - Elegant navigation between sections  
+💫 **Interactive Elements** - Hover effects, animations, and transitions  
 
 ## Sections
 
@@ -22,60 +22,94 @@ A modern, responsive portfolio website built with React, featuring glass morphis
 - **Certifications** - Professional certifications
 - **Contact** - LinkedIn, Phone, and GitHub links
 
-## Getting Started
+## How to Run
 
-### Prerequisites
+Simply open `index.html` in your web browser! No installation or build process needed.
 
-- Node.js (v14 or higher)
-- npm or yarn
+### Option 1: Direct File Opening
+1. Navigate to the Portfolio folder
+2. Double-click `index.html`
+3. It will open in your default browser
 
-### Installation
+### Option 2: Using a Local Server (Recommended)
+For the best experience, use a local server:
 
-1. Install dependencies:
+**Python 3:**
 ```bash
-npm install
+cd /Users/kush/Documents/Portfolio
+python3 -m http.server 8000
+```
+Then open http://localhost:8000 in your browser
+
+**Python 2:**
+```bash
+cd /Users/kush/Documents/Portfolio
+python -m SimpleHTTPServer 8000
 ```
 
-2. Start the development server:
+**Node.js (if installed):**
 ```bash
-npm start
+cd /Users/kush/Documents/Portfolio
+npx http-server -p 8000
 ```
 
-3. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-### Build for Production
-
-```bash
-npm run build
-```
-
-This creates an optimized production build in the `build` folder.
+**VS Code Live Server:**
+If you use VS Code, install the "Live Server" extension and click "Go Live"
 
 ## Customization
 
 ### Update Your Information
 
-1. **Profile Photo**: Replace `src/assets/IMG_6407.jpeg` with your photo
-2. **Hero Section**: Edit `src/components/Hero.js`
-3. **About Me**: Edit `src/components/About.js`
-4. **Education**: Update the `educationData` array in `src/components/Education.js`
-5. **Experience**: Update the `experienceData` array in `src/components/Experience.js`
-6. **Projects**: Update the `projectsData` array in `src/components/Projects.js`
-7. **Certifications**: Update the `certificationsData` array in `src/components/Certifications.js`
-8. **Contact**: Update the `contactData` array in `src/components/Contact.js`
+1. **Profile Photo**: Replace `IMG_6407.jpeg` with your photo (or update the filename in `index.html`)
+
+2. **About Me**: Edit the content in `index.html` (lines 58-71)
+
+3. **Education**: Update the education entries in `index.html` (lines 82-100)
+
+4. **Experience**: Update the experience entries in `index.html` (lines 109-135)
+
+5. **Projects**: Update the project cards in `index.html` (lines 145-214)
+   - Add your project images
+   - Update titles, descriptions, and GitHub links
+   - Modify technology tags
+
+6. **Certifications**: Update the certification cards in `index.html` (lines 223-244)
+
+7. **Contact**: Update contact information in `index.html` (lines 255-290)
+   - LinkedIn URL
+   - Phone number
+   - GitHub username
 
 ### Styling
 
-- Main styles: `src/index.css`
-- Component-specific styles: `src/components/*.css`
-- Color variables: Defined in `:root` in `src/index.css`
+- Main styles: `styles.css`
+- Color variables: Defined in `:root` in `styles.css`
+- Animations: Controlled in `script.js` and `styles.css`
+
+## File Structure
+
+```
+Portfolio/
+├── index.html          # Main HTML file
+├── styles.css          # All CSS styles
+├── script.js           # JavaScript for interactivity
+├── IMG_6407.jpeg       # Profile photo
+└── README.md          # This file
+```
 
 ## Technologies Used
 
-- **React** - UI library
-- **Framer Motion** - Animation library
-- **React Icons** - Icon library
-- **CSS3** - Styling with glass morphism effects
+- **HTML5** - Structure
+- **CSS3** - Styling with glass morphism effects and animations
+- **Vanilla JavaScript** - Interactivity and animations
+
+## Browser Support
+
+Works on all modern browsers:
+- Chrome (recommended)
+- Firefox
+- Safari
+- Edge
 
 ## License
 

@@ -154,6 +154,8 @@ body {
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
+    object-position: center 15%;
+    transform: scale(0.85);
     border: 4px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     position: relative;
@@ -426,8 +428,9 @@ body {
 .project-image {
     width: 100%;
     height: 250px;
-    object-fit: cover;
     position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
 }
 
 .project-image img {
@@ -435,6 +438,7 @@ body {
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
+    display: block;
 }
 
 .project-overlay {
@@ -567,6 +571,61 @@ body {
     text-decoration: underline;
 }
 
+/* Technical Skills Section */
+.skills-section {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 100px 0;
+}
+
+.skills-section .skills-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.skills-category h3 {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.skill-tag {
+    padding: 0.4rem 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    background: rgba(255, 255, 255, 0.35);
+    transform: translateY(-2px);
+}
+
+.skills-soft .skill-tag {
+    background: rgba(236, 72, 153, 0.25);
+    border-color: rgba(236, 72, 153, 0.4);
+}
+
+@media (max-width: 768px) {
+    .skills-section .skills-grid {
+        padding: 1.5rem;
+    }
+}
+
 /* Contact Section */
 .contact-section {
     background: rgba(255, 255, 255, 0.05);
@@ -647,6 +706,72 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Fade-in animation for elements */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Enhanced project card hover effects */
+.project-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.project-card:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+.project-image {
+    overflow: hidden;
+}
+
+.project-image img {
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.1);
+}
+
+/* Enhanced certification card animations */
+.cert-card {
+    transition: all 0.3s ease;
+}
+
+.cert-card:hover .cert-icon {
+    transform: rotate(360deg) scale(1.2);
+    transition: transform 0.6s ease;
+}
+
+.cert-icon {
+    transition: transform 0.3s ease;
+}
+
+/* Enhanced contact icon animations */
+.contact-icon {
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover .contact-icon {
+    transform: rotate(360deg) scale(1.1);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Active navigation link */
+.nav-menu a.active {
+    color: var(--accent-color);
+}
+
+.nav-menu a.active::after {
+    width: 100%;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-menu {
@@ -717,6 +842,8 @@ html {
     .profile-image {
         width: 150px;
         height: 150px;
+        object-position: center 15%;
+        transform: scale(0.85);
     }
 
     .image-glow {
