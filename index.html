@@ -3,74 +3,239 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kush Mehta - Portfolio</title>
+    <title>Kush Mehta | Data Engineer & AI/ML Engineer</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <!-- Background Blobs -->
+    <div class="bg-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="blob blob-4"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <div class="logo">Kush</div>
-            <ul class="nav-menu">
-                <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <div class="logo">
+                <span class="logo-text">KM</span>
+                <span class="logo-dot"></span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <a href="Kush___Resume___DE.pdf" class="btn-resume" target="_blank">Resume ↗</a>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="hero">
+        <!-- Floating Tech Labels -->
+        <div class="floating-card floating-card-1">
+            <span class="floating-icon">⚡</span><span>Data Engineering</span>
+        </div>
+        <div class="floating-card floating-card-2">
+            <span class="floating-icon">🤖</span><span>AI / ML</span>
+        </div>
+        <div class="floating-card floating-card-3">
+            <span class="floating-icon">☁️</span><span>Cloud Systems</span>
+        </div>
+        <div class="floating-card floating-card-4">
+            <span class="floating-icon">🔗</span><span>LLM &amp; RAG</span>
+        </div>
+
         <div class="hero-content">
-            <div class="profile-image-container">
-                <img src="IMG_6407.jpg" alt="Kush Mehta" class="profile-image">
-                <div class="image-glow"></div>
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                Available for opportunities
             </div>
+
+            <div class="profile-image-container">
+                <div class="profile-ring"></div>
+                <img src="IMG_6407.jpg" alt="Kush Mehta" class="profile-image">
+            </div>
+
             <h1 class="hero-title">Hi, I'm <span class="gradient-text">Kush Mehta</span></h1>
-            <p class="hero-subtitle">Data Engineer & Data Analyst</p>
+            <p class="hero-subtitle"><span class="typed-text"></span><span class="cursor">|</span></p>
+            <p class="hero-description">Building Scalable Data Systems and Intelligent AI Products</p>
+
             <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                <a href="#projects" class="btn btn-primary">
+                    <span>View Projects</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="Kush___Resume___DE.pdf" class="btn btn-secondary" target="_blank">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    <span>Download Resume</span>
+                </a>
+                <a href="#contact" class="btn btn-outline"><span>Contact Me</span></a>
+            </div>
+
+            <div class="hero-socials">
+                <a href="https://github.com/kush-rm" target="_blank" class="social-link" title="GitHub">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+                <a href="https://linkedin.com/in/kush-mehta09/" target="_blank" class="social-link" title="LinkedIn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+                <a href="mailto:kushmehta9702@gmail.com" class="social-link" title="Email">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </a>
             </div>
         </div>
+
         <div class="scroll-indicator">
-            <div class="mouse"></div>
+            <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+            <span>Scroll to explore</span>
         </div>
     </section>
 
-    <!-- About Me Section -->
+    <!-- About Section -->
     <section id="about" class="section about-section">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text glass-card">
-                    <p>
-                        Graduate Engineering Data Science student with hands-on experience across data engineering, analytics, 
-                        and applied machine learning in academic and industry environments. Proven ability to build end-to-end 
-                        data pipelines, transform large datasets, and deliver insights through scalable workflows, dashboards, 
-                        and production-grade analytics systems.
-                    </p>
-                    <p>
-                        I specialize in designing and optimizing large-scale ETL pipelines, implementing machine learning models, 
-                        and creating data-driven solutions that drive business value. My expertise spans from building real-time 
-                        streaming pipelines to developing predictive analytics systems.
-                    </p>
-                    <p>
-                        With a strong foundation in Python, cloud technologies (AWS, Azure), and modern data engineering tools 
-                        like Apache Airflow, Spark, and Snowflake, I bring a comprehensive skill set to every project.
-                    </p>
+            <div class="section-header reveal">
+                <span class="section-badge">About Me</span>
+                <h2 class="section-title">Turning Data into <span class="gradient-text">Intelligence</span></h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p>Graduate Engineering Data Science student with hands-on experience across data engineering, analytics, and applied machine learning in academic and industry environments. Proven ability to build end-to-end data pipelines, transform large datasets, and deliver insights through scalable workflows, dashboards, and production-grade analytics systems.</p>
+                    <p>I specialize in designing and optimizing large-scale ETL pipelines, implementing machine learning models, and creating data-driven solutions that drive business value. My expertise spans from building real-time streaming pipelines to developing predictive analytics systems.</p>
+                    <p>With a strong foundation in Python, cloud technologies (AWS, GCP, Azure), and modern data engineering tools like Apache Airflow, Spark, and Snowflake, I bring a comprehensive skill set to every project.</p>
+                </div>
+                <div class="about-cards">
+                    <div class="about-specialty-card reveal" data-tilt>
+                        <div class="specialty-icon" style="background: linear-gradient(135deg, #4f46e5, #7c3aed);">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+                        </div>
+                        <div><h4>Data Engineering</h4><p>ETL Pipelines, Airflow, Snowflake, dbt, Spark</p></div>
+                    </div>
+                    <div class="about-specialty-card reveal" data-tilt>
+                        <div class="specialty-icon" style="background: linear-gradient(135deg, #7c3aed, #ec4899);">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"></path></svg>
+                        </div>
+                        <div><h4>AI / ML</h4><p>PyTorch, TensorFlow, LLMs, RAG, Scikit-learn</p></div>
+                    </div>
+                    <div class="about-specialty-card reveal" data-tilt>
+                        <div class="specialty-icon" style="background: linear-gradient(135deg, #06b6d4, #10b981);">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                        </div>
+                        <div><h4>Cloud Platforms</h4><p>AWS, GCP, Azure, Databricks, BigQuery</p></div>
+                    </div>
+                    <div class="about-specialty-card reveal" data-tilt>
+                        <div class="specialty-icon" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                        </div>
+                        <div><h4>Product Thinking</h4><p>Power BI, Tableau, Dashboards, Analytics</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge">Technical Arsenal</span>
+                <h2 class="section-title">Skills &amp; <span class="gradient-text">Technologies</span></h2>
+            </div>
+            <div class="skills-container">
+                <div class="skill-group reveal" data-tilt>
+                    <div class="skill-group-header">
+                        <div class="skill-group-icon" style="background: linear-gradient(135deg, #4f46e5, #7c3aed);">💻</div>
+                        <h3>Programming</h3>
+                    </div>
+                    <div class="skill-pills">
+                        <span class="skill-pill pill-indigo">Python</span>
+                        <span class="skill-pill pill-indigo">SQL</span>
+                        <span class="skill-pill pill-indigo">Java</span>
+                        <span class="skill-pill pill-indigo">R</span>
+                        <span class="skill-pill pill-indigo">SAS</span>
+                        <span class="skill-pill pill-indigo">MATLAB</span>
+                        <span class="skill-pill pill-indigo">Git</span>
+                        <span class="skill-pill pill-indigo">MS Excel</span>
+                    </div>
+                </div>
+                <div class="skill-group reveal" data-tilt>
+                    <div class="skill-group-header">
+                        <div class="skill-group-icon" style="background: linear-gradient(135deg, #7c3aed, #ec4899);">🔬</div>
+                        <h3>AI / ML</h3>
+                    </div>
+                    <div class="skill-pills">
+                        <span class="skill-pill pill-violet">PyTorch</span>
+                        <span class="skill-pill pill-violet">TensorFlow</span>
+                        <span class="skill-pill pill-violet">Scikit-learn</span>
+                        <span class="skill-pill pill-violet">LLMs</span>
+                        <span class="skill-pill pill-violet">RAG</span>
+                        <span class="skill-pill pill-violet">NLTK</span>
+                        <span class="skill-pill pill-violet">NumPy</span>
+                        <span class="skill-pill pill-violet">Pandas</span>
+                    </div>
+                </div>
+                <div class="skill-group reveal" data-tilt>
+                    <div class="skill-group-header">
+                        <div class="skill-group-icon" style="background: linear-gradient(135deg, #06b6d4, #4f46e5);">🔧</div>
+                        <h3>Data Engineering</h3>
+                    </div>
+                    <div class="skill-pills">
+                        <span class="skill-pill pill-cyan">Snowflake</span>
+                        <span class="skill-pill pill-cyan">Apache Airflow</span>
+                        <span class="skill-pill pill-cyan">Databricks</span>
+                        <span class="skill-pill pill-cyan">dbt</span>
+                        <span class="skill-pill pill-cyan">PySpark</span>
+                        <span class="skill-pill pill-cyan">Kafka</span>
+                        <span class="skill-pill pill-cyan">Delta Lake</span>
+                        <span class="skill-pill pill-cyan">AWS Glue</span>
+                    </div>
+                </div>
+                <div class="skill-group reveal" data-tilt>
+                    <div class="skill-group-header">
+                        <div class="skill-group-icon" style="background: linear-gradient(135deg, #10b981, #06b6d4);">☁️</div>
+                        <h3>Cloud &amp; Databases</h3>
+                    </div>
+                    <div class="skill-pills">
+                        <span class="skill-pill pill-mint">AWS</span>
+                        <span class="skill-pill pill-mint">GCP</span>
+                        <span class="skill-pill pill-mint">Azure</span>
+                        <span class="skill-pill pill-mint">BigQuery</span>
+                        <span class="skill-pill pill-mint">PostgreSQL</span>
+                        <span class="skill-pill pill-mint">MongoDB</span>
+                        <span class="skill-pill pill-mint">Redshift</span>
+                        <span class="skill-pill pill-mint">Azure Cosmos DB</span>
+                    </div>
+                </div>
+                <div class="skill-group reveal" data-tilt>
+                    <div class="skill-group-header">
+                        <div class="skill-group-icon" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">📊</div>
+                        <h3>Visualization &amp; DevOps</h3>
+                    </div>
+                    <div class="skill-pills">
+                        <span class="skill-pill pill-orange">Power BI</span>
+                        <span class="skill-pill pill-orange">Tableau</span>
+                        <span class="skill-pill pill-orange">Docker</span>
+                        <span class="skill-pill pill-orange">Kubernetes</span>
+                        <span class="skill-pill pill-orange">GitHub Actions</span>
+                        <span class="skill-pill pill-orange">Jenkins</span>
+                        <span class="skill-pill pill-orange">Alteryx</span>
+                        <span class="skill-pill pill-orange">Streamlit</span>
+                        <span class="skill-pill pill-orange">Flask</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -79,72 +244,123 @@
     <!-- Education Section -->
     <section id="education" class="section education-section">
         <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="education-timeline">
-                <div class="timeline-item glass-card">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Master of Science in Engineering Data Science</h3>
-                        <p class="institution">University of Houston</p>
-                        <p class="duration">Aug 2024 – May 2026</p>
-                        <p class="description">GPA: 3.83/4.0 | Specializing in data engineering, machine learning, and scalable analytics systems</p>
+            <div class="section-header reveal">
+                <span class="section-badge">Academic Background</span>
+                <h2 class="section-title">My <span class="gradient-text">Education</span></h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker"><div class="timeline-dot dot-blue"></div></div>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div class="timeline-icon edu-icon">🎓</div>
+                            <div>
+                                <h3>Master of Science in Engineering Data Science</h3>
+                                <p class="timeline-org">University of Houston</p>
+                            </div>
+                            <span class="timeline-badge badge-blue">Aug 2024 – May 2026</span>
+                        </div>
+                        <p class="timeline-desc">GPA: 3.83/4.0 · Specializing in data engineering, machine learning, and scalable analytics systems</p>
                     </div>
                 </div>
-                <div class="timeline-item glass-card">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Bachelor of Engineering in Computer Engineering & Honors in AIML</h3>
-                        <p class="institution">University of Mumbai</p>
-                        <p class="duration">Aug 2020 – May 2024</p>
-                        <p class="description">GPA: 3.87/4.0 | Focused on computer engineering with honors specialization in Artificial Intelligence and Machine Learning</p>
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker"><div class="timeline-dot dot-violet"></div></div>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div class="timeline-icon edu-icon">🏛️</div>
+                            <div>
+                                <h3>Bachelor of Engineering in Computer Engineering &amp; Honors in AIML</h3>
+                                <p class="timeline-org">University of Mumbai</p>
+                            </div>
+                            <span class="timeline-badge badge-violet">Aug 2020 – May 2024</span>
+                        </div>
+                        <p class="timeline-desc">GPA: 3.87/4.0 · Focused on computer engineering with honors specialization in Artificial Intelligence and Machine Learning</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Professional Experience Section -->
+    <!-- Experience Section -->
     <section id="experience" class="section experience-section">
         <div class="container">
-            <h2 class="section-title">Professional Experience</h2>
-            <div class="experience-timeline">
-                <div class="timeline-item glass-card">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Research Assistant – Data Engineering</h3>
-                        <p class="company">University of Houston</p>
-                        <p class="duration">Jan 2025 – Present</p>
-                        <ul class="responsibilities">
-                            <li>Designed and built large-scale ETL pipelines using Apache Airflow (DAGs, task dependencies, scheduling) to automate ingestion and transformation of 10M+ structured records in Snowflake</li>
-                            <li>Optimized complex SQL stored procedures, CTEs, and window functions to support large-scale analytical queries, reducing end-to-end ETL runtime by 40% across multi-terabyte Snowflake datasets</li>
-                            <li>Implemented Power BI dashboards with DAX-based measures and row-level aggregations to track pipeline health, volumes, and downstream analytics consumption, improving visibility into system performance</li>
+            <div class="section-header reveal">
+                <span class="section-badge">Work History</span>
+                <h2 class="section-title">Professional <span class="gradient-text">Experience</span></h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker"><div class="timeline-dot dot-blue"></div></div>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div class="timeline-icon exp-icon exp-blue">⚡</div>
+                            <div>
+                                <h3>Research Assistant – Data Engineering</h3>
+                                <p class="timeline-org">University of Houston</p>
+                            </div>
+                            <span class="timeline-badge badge-blue">Jan 2025 – Present</span>
+                        </div>
+                        <ul class="timeline-achievements">
+                            <li>Designed and built large-scale ETL pipelines using Apache Airflow (DAGs, task dependencies, scheduling) to automate ingestion and transformation of <strong>10M+ structured records</strong> in Snowflake</li>
+                            <li>Optimized complex SQL stored procedures, CTEs, and window functions reducing end-to-end ETL runtime by <strong>40%</strong> across multi-terabyte Snowflake datasets</li>
+                            <li>Implemented Power BI dashboards with DAX-based measures improving visibility into system performance and analytics consumption</li>
                         </ul>
+                        <div class="timeline-tags">
+                            <span class="exp-tag">Apache Airflow</span>
+                            <span class="exp-tag">Snowflake</span>
+                            <span class="exp-tag">SQL</span>
+                            <span class="exp-tag">Power BI</span>
+                            <span class="exp-tag">ETL</span>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline-item glass-card">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Data Engineer Intern</h3>
-                        <p class="company">Sahu Technologies</p>
-                        <p class="duration">Aug 2023 – May 2024</p>
-                        <ul class="responsibilities">
-                            <li>Constructed AWS Glue–based ingestion pipelines to process 3M+ high-volume event and customer interaction records, enabling analytics on energy service usage, demand patterns, and operational behavior</li>
-                            <li>Modeled time-partitioned analytical datasets in Databricks using Delta Lake and Delta Live Tables, applying dimensional schemas to reduce aggregation query latency by 45% across time-series–driven performance</li>
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker"><div class="timeline-dot dot-violet"></div></div>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div class="timeline-icon exp-icon exp-violet">🔧</div>
+                            <div>
+                                <h3>Data Engineer Intern</h3>
+                                <p class="timeline-org">Sahu Technologies</p>
+                            </div>
+                            <span class="timeline-badge badge-violet">Aug 2023 – May 2024</span>
+                        </div>
+                        <ul class="timeline-achievements">
+                            <li>Constructed AWS Glue–based ingestion pipelines to process <strong>3M+ high-volume event</strong> and customer interaction records for energy service analytics</li>
+                            <li>Modeled time-partitioned analytical datasets in Databricks using Delta Lake and Delta Live Tables, reducing aggregation query latency by <strong>45%</strong></li>
                             <li>Developed Alteryx BI workflows and dashboards to track service KPIs, usage trends, and operational reliability</li>
                         </ul>
+                        <div class="timeline-tags">
+                            <span class="exp-tag">AWS Glue</span>
+                            <span class="exp-tag">Databricks</span>
+                            <span class="exp-tag">Delta Lake</span>
+                            <span class="exp-tag">Alteryx</span>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline-item glass-card">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Data Analyst Intern</h3>
-                        <p class="company">Pheme Software Pvt. Ltd. – IBM Partner</p>
-                        <p class="duration">Dec 2022 – Mar 2023</p>
-                        <ul class="responsibilities">
-                            <li>Evaluated machine learning models in Python, including Random Forest classifiers for issue severity, and Isolation Forest models for anomaly detection, reducing operational triage time by 30% across client projects</li>
-                            <li>Integrated Apache Kafka–based streaming workflows to ingest and process high-volume log and event data in near real time, enabling scalable feature generation for downstream analytics and ML pipelines</li>
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker"><div class="timeline-dot dot-mint"></div></div>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div class="timeline-icon exp-icon exp-mint">📊</div>
+                            <div>
+                                <h3>Data Analyst Intern</h3>
+                                <p class="timeline-org">Pheme Software Pvt. Ltd. – IBM Partner</p>
+                            </div>
+                            <span class="timeline-badge badge-mint">Dec 2022 – Mar 2023</span>
+                        </div>
+                        <ul class="timeline-achievements">
+                            <li>Evaluated machine learning models including Random Forest classifiers and Isolation Forest for anomaly detection, reducing operational triage time by <strong>30%</strong></li>
+                            <li>Integrated Apache Kafka–based streaming workflows to ingest and process high-volume log and event data in near real time</li>
                             <li>Containerized ML services with Docker and deployed CI/CD pipelines on AWS Lambda, reducing deployment cycles</li>
                         </ul>
+                        <div class="timeline-tags">
+                            <span class="exp-tag">Python</span>
+                            <span class="exp-tag">Kafka</span>
+                            <span class="exp-tag">Docker</span>
+                            <span class="exp-tag">AWS Lambda</span>
+                            <span class="exp-tag">ML Models</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -154,103 +370,103 @@
     <!-- Projects Section -->
     <section id="projects" class="section projects-section">
         <div class="container">
-            <h2 class="section-title">Projects</h2>
+            <div class="section-header reveal">
+                <span class="section-badge">Featured Work</span>
+                <h2 class="section-title">Projects &amp; <span class="gradient-text">Builds</span></h2>
+            </div>
             <div class="projects-grid">
-                <!-- Project Card 1 -->
-                <div class="project-card glass-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop&q=80" alt="BroadVail RevPAR Intelligence Platform" loading="lazy">
-                        <div class="project-overlay">
-                            <a href="https://github.com/kush-rm" target="_blank" class="project-link">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                                </svg>
+                <div class="project-card reveal" data-tilt>
+                    <div class="project-gradient" style="background: linear-gradient(135deg, #4f46e5, #7c3aed);"></div>
+                    <div class="project-body">
+                        <div class="project-header">
+                            <span class="project-category">ML · Forecasting</span>
+                            <a href="https://github.com/kush-rm" target="_blank" class="project-github">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                             </a>
                         </div>
-                    </div>
-                    <div class="project-content">
                         <h3>BroadVail RevPAR Intelligence Platform</h3>
                         <p>Engineered a scalable revenue forecasting pipeline over 12,800+ multifamily property records using XGBoost and LightGBM, achieving 70.6% R² and reducing RMSE by 18.3%. Automated reporting with LLM summary and SHAP-based explainability.</p>
+                        <div class="project-impact">
+                            <span class="impact-badge">📈 70.6% R² Score</span>
+                            <span class="impact-badge">⚡ 18.3% RMSE Reduction</span>
+                        </div>
                         <div class="project-tech">
                             <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Streamlit</span>
                             <span class="tech-tag">XGBoost</span>
                             <span class="tech-tag">LightGBM</span>
                             <span class="tech-tag">SHAP</span>
+                            <span class="tech-tag">Streamlit</span>
                         </div>
                     </div>
                 </div>
-
-                <!-- Project Card 2 -->
-                <div class="project-card glass-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=400&h=250&fit=crop&q=80" alt="Predictive Maintenance System" loading="lazy">
-                        <div class="project-overlay">
-                            <a href="https://github.com/kush-rm" target="_blank" class="project-link">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                                </svg>
+                <div class="project-card reveal" data-tilt>
+                    <div class="project-gradient" style="background: linear-gradient(135deg, #06b6d4, #4f46e5);"></div>
+                    <div class="project-body">
+                        <div class="project-header">
+                            <span class="project-category">IoT · Predictive ML</span>
+                            <a href="https://github.com/kush-rm" target="_blank" class="project-github">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                             </a>
                         </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Predictive Maintenance System for Aircraft Engines</h3>
+                        <h3>Predictive Maintenance for Aircraft Engines</h3>
                         <p>Applied predictive maintenance models (Random Forest, XGBoost) on 2M+ IoT sensor records in AWS S3. Queried data with SQL on Redshift, applying time-series methods to identify failure patterns, increasing precision by 18%.</p>
+                        <div class="project-impact">
+                            <span class="impact-badge">🔍 2M+ IoT Records</span>
+                            <span class="impact-badge">📉 18% Precision Gain</span>
+                        </div>
                         <div class="project-tech">
-                            <span class="tech-tag">Python</span>
                             <span class="tech-tag">TensorFlow</span>
                             <span class="tech-tag">AWS S3</span>
                             <span class="tech-tag">Redshift</span>
                             <span class="tech-tag">Scikit-learn</span>
+                            <span class="tech-tag">XGBoost</span>
                         </div>
                     </div>
                 </div>
-
-                <!-- Project Card 3 -->
-                <div class="project-card glass-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=250&fit=crop&q=80" alt="Real-Time Construction Dashboard" loading="lazy">
-                        <div class="project-overlay">
-                            <a href="https://github.com/kush-rm" target="_blank" class="project-link">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                                </svg>
+                <div class="project-card reveal" data-tilt>
+                    <div class="project-gradient" style="background: linear-gradient(135deg, #10b981, #06b6d4);"></div>
+                    <div class="project-body">
+                        <div class="project-header">
+                            <span class="project-category">Streaming · Real-Time</span>
+                            <a href="https://github.com/kush-rm" target="_blank" class="project-github">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                             </a>
                         </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Real-Time Construction Equipment Utilization Dashboard</h3>
-                        <p>Built a real-time streaming pipeline using Spark to ingest high-frequency construction equipment telemetry and GPS events, storing analytical data in BigQuery. Produced dashboards using Tableau to visualize KPIs, improving equipment utilization by 25%.</p>
+                        <h3>Real-Time Construction Equipment Dashboard</h3>
+                        <p>Built a real-time streaming pipeline using Spark to ingest high-frequency construction telemetry and GPS events, storing analytical data in BigQuery. Produced Tableau dashboards to visualize KPIs, improving equipment utilization by 25%.</p>
+                        <div class="project-impact">
+                            <span class="impact-badge">📡 Real-Time Streaming</span>
+                            <span class="impact-badge">📊 25% Utilization Boost</span>
+                        </div>
                         <div class="project-tech">
                             <span class="tech-tag">Kafka</span>
                             <span class="tech-tag">Spark</span>
-                            <span class="tech-tag">MongoDB</span>
                             <span class="tech-tag">BigQuery</span>
+                            <span class="tech-tag">MongoDB</span>
                             <span class="tech-tag">Tableau</span>
                         </div>
                     </div>
                 </div>
-
-                <!-- Project Card 4 -->
-                <div class="project-card glass-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=250&fit=crop&q=80" alt="EEG Motor Movement Classification" loading="lazy">
-                        <div class="project-overlay">
-                            <a href="https://github.com/kush-rm" target="_blank" class="project-link">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                                </svg>
+                <div class="project-card reveal" data-tilt>
+                    <div class="project-gradient" style="background: linear-gradient(135deg, #ec4899, #7c3aed);"></div>
+                    <div class="project-body">
+                        <div class="project-header">
+                            <span class="project-category">Deep Learning · BCI</span>
+                            <a href="https://github.com/kush-rm" target="_blank" class="project-github">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                             </a>
                         </div>
-                    </div>
-                    <div class="project-content">
                         <h3>EEG-Based Motor Movement Classification</h3>
                         <p>Fabricated an EEG signal processing pipeline on a 64-channel dataset (86 participants) for feature extraction. Trained Random Forest, SVM, and CNN models to classify hand vs foot movements, achieving ~78% accuracy.</p>
+                        <div class="project-impact">
+                            <span class="impact-badge">🧠 86 Participants</span>
+                            <span class="impact-badge">✅ ~78% Accuracy</span>
+                        </div>
                         <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">TensorFlow</span>
                             <span class="tech-tag">PyTorch</span>
-                            <span class="tech-tag">NLTK</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">CNN</span>
+                            <span class="tech-tag">SVM</span>
                             <span class="tech-tag">CUDA</span>
                         </div>
                     </div>
@@ -262,99 +478,31 @@
     <!-- Certifications Section -->
     <section id="certifications" class="section certifications-section">
         <div class="container">
-            <h2 class="section-title">Certifications</h2>
+            <div class="section-header reveal">
+                <span class="section-badge">Credentials</span>
+                <h2 class="section-title">Certifications &amp; <span class="gradient-text">Achievements</span></h2>
+            </div>
             <div class="certifications-grid">
-                <div class="cert-card glass-card">
-                    <div class="cert-icon">🏆</div>
-                    <h3>IBM Advanced Certificate in AI & ML</h3>
+                <div class="cert-card reveal" data-tilt>
+                    <div class="cert-glow" style="background: linear-gradient(135deg, #4f46e5, #7c3aed);"></div>
+                    <div class="cert-icon-wrap">🏆</div>
+                    <h3>IBM Advanced Certificate in AI &amp; ML</h3>
                     <p class="cert-issuer">IBM</p>
-                    <p class="cert-date">Advanced Certification</p>
-                    <a href="#" target="_blank" class="cert-link">View Certificate</a>
+                    <a href="#" target="_blank" class="cert-link">View Certificate →</a>
                 </div>
-                <div class="cert-card glass-card">
-                    <div class="cert-icon">🎓</div>
-                    <h3>AWS NLP for ML</h3>
+                <div class="cert-card reveal" data-tilt>
+                    <div class="cert-glow" style="background: linear-gradient(135deg, #f59e0b, #ef4444);"></div>
+                    <div class="cert-icon-wrap">🎓</div>
+                    <h3>AWS NLP for Machine Learning</h3>
                     <p class="cert-issuer">Amazon Web Services</p>
-                    <p class="cert-date">AWS Certification</p>
-                    <a href="#" target="_blank" class="cert-link">View Certificate</a>
+                    <a href="#" target="_blank" class="cert-link">View Certificate →</a>
                 </div>
-                <div class="cert-card glass-card">
-                    <div class="cert-icon">⭐</div>
+                <div class="cert-card reveal" data-tilt>
+                    <div class="cert-glow" style="background: linear-gradient(135deg, #06b6d4, #10b981);"></div>
+                    <div class="cert-icon-wrap">☁️</div>
                     <h3>AWS Cloud Foundations</h3>
                     <p class="cert-issuer">Amazon Web Services</p>
-                    <p class="cert-date">AWS Certification</p>
-                    <a href="#" target="_blank" class="cert-link">View Certificate</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Technical Skills Section -->
-    <section id="skills" class="section skills-section">
-        <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-grid glass-card">
-                <div class="skills-category">
-                    <h3>Programming & Tools</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">Flask</span>
-                        <span class="skill-tag">Streamlit</span>
-                        <span class="skill-tag">R</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">SAS</span>
-                        <span class="skill-tag">MATLAB</span>
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">MS Excel</span>
-                    </div>
-                </div>
-                <div class="skills-category">
-                    <h3>Frameworks & Visualization</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">NumPy</span>
-                        <span class="skill-tag">Pandas</span>
-                        <span class="skill-tag">Matplotlib</span>
-                        <span class="skill-tag">NLTK</span>
-                        <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">TensorFlow</span>
-                        <span class="skill-tag">Power BI</span>
-                        <span class="skill-tag">Tableau</span>
-                    </div>
-                </div>
-                <div class="skills-category">
-                    <h3>Data Engineering & Deployment</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Airflow</span>
-                        <span class="skill-tag">DBT</span>
-                        <span class="skill-tag">PySpark</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Kubernetes</span>
-                        <span class="skill-tag">GitHub Actions</span>
-                        <span class="skill-tag">Jenkins</span>
-                    </div>
-                </div>
-                <div class="skills-category">
-                    <h3>Databases & Cloud</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">AWS RDS</span>
-                        <span class="skill-tag">MongoDB Atlas</span>
-                        <span class="skill-tag">Azure Cosmos DB</span>
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">Snowflake</span>
-                        <span class="skill-tag">BigQuery</span>
-                    </div>
-                </div>
-                <div class="skills-category skills-soft">
-                    <h3>Relevant Skills</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Analytical Thinking</span>
-                        <span class="skill-tag">Communication</span>
-                        <span class="skill-tag">Team Collaboration</span>
-                        <span class="skill-tag">Project Management</span>
-                        <span class="skill-tag">Continuous Learning</span>
-                    </div>
+                    <a href="#" target="_blank" class="cert-link">View Certificate →</a>
                 </div>
             </div>
         </div>
@@ -363,58 +511,46 @@
     <!-- Contact Section -->
     <section id="contact" class="section contact-section">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <p class="contact-intro">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
-                <div class="contact-info glass-card">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                                <rect x="2" y="9" width="4" height="12"></rect>
-                                <circle cx="4" cy="4" r="2"></circle>
-                            </svg>
-                        </div>
-                        <div class="contact-details">
-                            <h3>LinkedIn</h3>
-                            <a href="https://linkedin.com/in/kush-mehta09/" target="_blank">linkedin.com/in/kush-mehta09/</a>
-                        </div>
+            <div class="section-header reveal">
+                <span class="section-badge">Let's Connect</span>
+                <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+            </div>
+            <p class="contact-intro reveal">Open to Data Engineer, AI/ML Engineer, and Data Scientist roles. Let's build something impactful together.</p>
+            <div class="contact-grid">
+                <a href="mailto:kushmehta9702@gmail.com" class="contact-card reveal" data-tilt>
+                    <div class="contact-card-icon" style="background: linear-gradient(135deg, #4f46e5, #7c3aed);">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                            </svg>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Phone</h3>
-                            <a href="tel:+17135856056">713-585-6056</a>
-                        </div>
+                    <div class="contact-card-text"><h4>Email</h4><p>kushmehta9702@gmail.com</p></div>
+                    <div class="contact-arrow">→</div>
+                </a>
+                <a href="https://linkedin.com/in/kush-mehta09/" target="_blank" class="contact-card reveal" data-tilt>
+                    <div class="contact-card-icon" style="background: linear-gradient(135deg, #0077b5, #00a0dc);">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                            </svg>
-                        </div>
-                        <div class="contact-details">
-                            <h3>GitHub</h3>
-                            <a href="https://github.com/kush-rm" target="_blank">github.com/kush-rm</a>
-                        </div>
+                    <div class="contact-card-text"><h4>LinkedIn</h4><p>linkedin.com/in/kush-mehta09/</p></div>
+                    <div class="contact-arrow">→</div>
+                </a>
+                <a href="https://github.com/kush-rm" target="_blank" class="contact-card reveal" data-tilt>
+                    <div class="contact-card-icon" style="background: linear-gradient(135deg, #1f2937, #374151);">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Email</h3>
-                            <a href="mailto:kushmehta9702@gmail.com">kushmehta9702@gmail.com</a>
-                        </div>
+                    <div class="contact-card-text"><h4>GitHub</h4><p>github.com/kush-rm</p></div>
+                    <div class="contact-arrow">→</div>
+                </a>
+                <a href="tel:+17135856056" class="contact-card reveal" data-tilt>
+                    <div class="contact-card-icon" style="background: linear-gradient(135deg, #10b981, #06b6d4);">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                     </div>
-                </div>
+                    <div class="contact-card-text"><h4>Phone</h4><p>713-585-6056</p></div>
+                    <div class="contact-arrow">→</div>
+                </a>
+            </div>
+            <div class="contact-cta reveal">
+                <a href="mailto:kushmehta9702@gmail.com" class="btn-cta-glow">
+                    <span>✉️ Send me an email</span>
+                    <div class="btn-glow-effect"></div>
+                </a>
             </div>
         </div>
     </section>
@@ -422,7 +558,18 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Kush Mehta. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">KM</span>
+                    <span class="footer-tagline">Data Engineer · AI/ML Engineer</span>
+                </div>
+                <p class="footer-copy">© 2026 Kush Mehta · Built with passion for data &amp; AI</p>
+                <div class="footer-links">
+                    <a href="https://github.com/kush-rm" target="_blank">GitHub</a>
+                    <a href="https://linkedin.com/in/kush-mehta09/" target="_blank">LinkedIn</a>
+                    <a href="mailto:kushmehta9702@gmail.com">Email</a>
+                </div>
+            </div>
         </div>
     </footer>
 

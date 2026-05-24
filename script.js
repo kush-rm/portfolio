@@ -1,193 +1,234 @@
-// Mobile Navigation Toggle
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+/* ====================================================
+   KUSH MEHTA — PREMIUM PORTFOLIO
+   Interactions: Typing · Tilt · Reveal · Navbar
+   ==================================================== */
 
+'use strict';
+
+const $ = (s) => document.querySelector(s);
+const $$ = (s) => document.querySelectorAll(s);
+
+/* =====================
+   NAVBAR
+   ===================== */
+const navbar   = $('#navbar');
+const hamburger = $('#hamburger');
+const navMenu  = $('#nav-menu');
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+    const y = window.pageYOffset;
+    if (navbar) {
+        navbar.classList.toggle('scrolled', y > 60);
+    }
+    lastScroll = y;
+    updateActiveLink();
+});
+
+// Mobile menu toggle
 if (hamburger && navMenu) {
     hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        hamburger.classList.toggle('active');
+        const open = navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active', open);
+        document.body.style.overflow = open ? 'hidden' : '';
     });
 
-    // Close mobile menu when clicking on a link
-    document.querySelectorAll('.nav-menu a').forEach(link => {
+    $$('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
             hamburger.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+
+    // Close on backdrop click
+    document.addEventListener('click', (e) => {
+        if (
+            navMenu.classList.contains('active') &&
+            !navMenu.contains(e.target) &&
+            !hamburger.contains(e.target)
+        ) {
+            navMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+}
+
+// Active nav link on scroll
+const pageSections = $$('section[id]');
+function updateActiveLink() {
+    let current = '';
+    pageSections.forEach(sec => {
+        if (window.pageYOffset >= sec.offsetTop - 160) {
+            current = sec.id;
+        }
+    });
+    $$('.nav-link').forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+    });
+}
+
+/* =====================
+   SMOOTH SCROLL
+   ===================== */
+$$('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (!href || href === '#') return;
+        const target = $(href);
+        if (!target) return;
+        e.preventDefault();
+        const offset = navbar ? navbar.offsetHeight + 16 : 80;
+        window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
+    });
+});
+
+/* =====================
+   TYPING ANIMATION
+   ===================== */
+const typedEl = $('.typed-text');
+if (typedEl) {
+    const phrases = [
+        'Data Engineer',
+        'AI / ML Engineer',
+        'Data Scientist',
+        'Cloud Data Architect',
+        'LLM & RAG Builder'
+    ];
+    let pi = 0, ci = 0, deleting = false;
+
+    function type() {
+        const phrase = phrases[pi];
+        typedEl.textContent = deleting
+            ? phrase.substring(0, ci - 1)
+            : phrase.substring(0, ci + 1);
+        deleting ? ci-- : ci++;
+
+        let delay = deleting ? 55 : 95;
+        if (!deleting && ci === phrase.length)  { delay = 2200; deleting = true; }
+        if (deleting  && ci === 0)              { deleting = false; pi = (pi + 1) % phrases.length; delay = 350; }
+
+        setTimeout(type, delay);
+    }
+    setTimeout(type, 900);
+}
+
+/* =====================
+   SCROLL REVEAL
+   ===================== */
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.08, rootMargin: '0px 0px -48px 0px' });
+
+// Stagger siblings inside a grid/list
+function staggerObserve(containerSel, childSel) {
+    $$(containerSel).forEach(container => {
+        $$(childSel, container).forEach((child, i) => {
+            child.style.transitionDelay = `${i * 0.1}s`;
+            revealObserver.observe(child);
         });
     });
 }
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const offsetTop = target.offsetTop - 80;
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
-        }
+$$('.reveal').forEach(el => revealObserver.observe(el));
+
+staggerObserve('.skills-container',    '.skill-group');
+staggerObserve('.projects-grid',       '.project-card');
+staggerObserve('.certifications-grid', '.cert-card');
+staggerObserve('.contact-grid',        '.contact-card');
+staggerObserve('.about-cards',         '.about-specialty-card');
+staggerObserve('.timeline',            '.timeline-item');
+
+/* =====================
+   3D CARD TILT
+   ===================== */
+function initTilt(el) {
+    const MAX = 8;
+    const PERSP = 1000;
+
+    el.addEventListener('mousemove', (e) => {
+        const r = el.getBoundingClientRect();
+        const rx = -((e.clientY - r.top  - r.height / 2) / (r.height / 2)) * MAX;
+        const ry =  ((e.clientX - r.left - r.width  / 2) / (r.width  / 2)) * MAX;
+        el.style.transform    = `perspective(${PERSP}px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(12px)`;
+        el.style.transition   = 'transform 0.08s ease';
+    });
+
+    el.addEventListener('mouseleave', () => {
+        el.style.transform  = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
+        el.style.transition = 'transform 0.5s cubic-bezier(0.4,0,0.2,1)';
+    });
+}
+$$('[data-tilt]').forEach(initTilt);
+
+/* =====================
+   RIPPLE EFFECT
+   ===================== */
+const rippleCSS = document.createElement('style');
+rippleCSS.textContent = `@keyframes ripple-effect { to { transform: scale(4); opacity: 0; } }`;
+document.head.appendChild(rippleCSS);
+
+$$('.btn, .btn-cta-glow').forEach(btn => {
+    btn.addEventListener('click', function (e) {
+        const r    = this.getBoundingClientRect();
+        const size = Math.max(r.width, r.height);
+        const span = document.createElement('span');
+        span.style.cssText = `
+            position:absolute; pointer-events:none;
+            width:${size}px; height:${size}px; border-radius:50%;
+            left:${e.clientX - r.left - size / 2}px;
+            top:${e.clientY  - r.top  - size / 2}px;
+            background:rgba(255,255,255,0.35);
+            transform:scale(0);
+            animation:ripple-effect 0.6s ease-out forwards;
+        `;
+        if (getComputedStyle(this).position === 'static') this.style.position = 'relative';
+        this.style.overflow = 'hidden';
+        this.appendChild(span);
+        setTimeout(() => span.remove(), 650);
     });
 });
 
-// Navbar background on scroll
-const navbar = document.querySelector('.navbar');
-let lastScroll = 0;
-
+/* =====================
+   HERO PARALLAX
+   ===================== */
+const heroContent = $('.hero-content');
 window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (navbar) {
-        if (currentScroll > 100) {
-            navbar.style.background = 'rgba(255, 255, 255, 0.15)';
-            navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
-        } else {
-            navbar.style.background = 'rgba(255, 255, 255, 0.1)';
-            navbar.style.boxShadow = 'none';
-        }
-    }
-    
-    lastScroll = currentScroll;
-});
-
-// Intersection Observer for fade-in animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Observe all glass cards for animation
-document.querySelectorAll('.glass-card').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(card);
-});
-
-// Observe section titles
-document.querySelectorAll('.section-title').forEach(title => {
-    title.style.opacity = '0';
-    title.style.transform = 'translateY(20px)';
-    title.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(title);
-});
-
-// Parallax effect for hero section
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero');
-    if (hero && scrolled < window.innerHeight) {
-        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-        hero.style.opacity = 1 - (scrolled / window.innerHeight) * 0.5;
+    if (!heroContent) return;
+    const y = window.pageYOffset;
+    if (y < window.innerHeight) {
+        heroContent.style.transform = `translateY(${y * 0.28}px)`;
+        heroContent.style.opacity   = `${1 - (y / window.innerHeight) * 1.15}`;
     }
 });
 
-// Add hover effect to project cards
-document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-10px) scale(1.02)';
-    });
-    
-    card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
+/* =====================
+   FLOATING CARDS MOUSE PARALLAX
+   ===================== */
+const floatingCards = $$('.floating-card');
+document.addEventListener('mousemove', (e) => {
+    const mx = (e.clientX - window.innerWidth  / 2) / window.innerWidth;
+    const my = (e.clientY - window.innerHeight / 2) / window.innerHeight;
+    floatingCards.forEach((card, i) => {
+        const depth = (i + 1) * 10;
+        card.style.transform = `translateY(${my * depth}px) translateX(${mx * depth}px)`;
     });
 });
 
-// Add ripple effect to buttons
-document.querySelectorAll('.btn').forEach(button => {
-    button.addEventListener('click', function(e) {
-        const ripple = document.createElement('span');
-        const rect = this.getBoundingClientRect();
-        const size = Math.max(rect.width, rect.height);
-        const x = e.clientX - rect.left - size / 2;
-        const y = e.clientY - rect.top - size / 2;
-        
-        ripple.style.width = ripple.style.height = size + 'px';
-        ripple.style.left = x + 'px';
-        ripple.style.top = y + 'px';
-        ripple.classList.add('ripple');
-        
-        this.appendChild(ripple);
-        
-        setTimeout(() => {
-            ripple.remove();
-        }, 600);
-    });
-});
-
-// Add CSS for ripple effect dynamically
-const style = document.createElement('style');
-style.textContent = `
-    .btn {
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .ripple {
-        position: absolute;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.6);
-        transform: scale(0);
-        animation: ripple-animation 0.6s ease-out;
-        pointer-events: none;
-    }
-    
-    @keyframes ripple-animation {
-        to {
-            transform: scale(4);
-            opacity: 0;
-        }
-    }
-`;
-document.head.appendChild(style);
-
-// Active navigation link highlighting
-const sections = document.querySelectorAll('.section');
-const navLinks = document.querySelectorAll('.nav-menu a');
-
-window.addEventListener('scroll', () => {
-    let current = '';
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (window.pageYOffset >= sectionTop - 200) {
-            current = section.getAttribute('id');
-        }
-    });
-    
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
-});
-
-// Add active link styling
-const activeStyle = document.createElement('style');
-activeStyle.textContent = `
-    .nav-menu a.active {
-        color: var(--accent-color);
-    }
-    
-    .nav-menu a.active::after {
-        width: 100%;
-    }
-`;
-document.head.appendChild(activeStyle);
-
-// Console welcome message
-console.log('%c👋 Welcome to my portfolio!', 'font-size: 20px; font-weight: bold; color: #6366f1;');
-console.log('%cFeel free to explore the code!', 'font-size: 14px; color: #64748b;');
+/* =====================
+   CONSOLE BRAND
+   ===================== */
+console.log(
+    '%c🚀 Kush Mehta | Data Engineer & AI/ML Engineer',
+    'font-size:15px;font-weight:bold;background:linear-gradient(135deg,#4f46e5,#7c3aed);color:white;padding:8px 16px;border-radius:8px;'
+);
+console.log(
+    '%c📫 kushmehta9702@gmail.com  ·  🔗 linkedin.com/in/kush-mehta09/',
+    'font-size:11px;color:#64748b;'
+);
